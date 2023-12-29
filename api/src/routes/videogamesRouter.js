@@ -43,9 +43,17 @@ gamesRouter.get("/:name", async (req, res) => {
 });
 
 gamesRouter.post("/PostVideogame", async (req, res) => {
-  const { name } = req.body;
+  const { name, description, plataforms, image, release_date, rating } =
+    req.body;
   try {
-    const creacion = await videoGamePost(name);
+    const creacion = await videoGamePost(
+      name,
+      description,
+      plataforms,
+      image,
+      release_date,
+      rating
+    );
     return res.status(400).json(creacion);
   } catch (error) {
     return res.status(400).json(error.message);

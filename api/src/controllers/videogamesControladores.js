@@ -27,9 +27,21 @@ const videoGamesName = async (searchName, API_KEY) => {
 
 // POST
 
-const videoGamePost = async (name, description) => {
+const videoGamePost = async (
+  name,
+  description,
+  plataforms,
+  image,
+  release_date,
+  rating
+) => {
   const add = await Videogame.create({
     name,
+    description,
+    plataforms,
+    image,
+    release_date,
+    rating,
   });
   return add;
 };
