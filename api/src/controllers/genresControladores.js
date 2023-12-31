@@ -1,5 +1,8 @@
-const genresControlador = () => {
-  return true;
+const axios = require("axios");
+
+const genresControlador = async (api_key) => {
+  const api = await axios(`https://api.rawg.io/api/genres?key=${api_key}`);
+  return api.data.results;
 };
 
-export default genresControlador;
+module.exports = { genresControlador };

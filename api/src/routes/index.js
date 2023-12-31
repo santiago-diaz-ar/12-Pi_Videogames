@@ -7,12 +7,14 @@ const router = Router();
 
 // rutas
 const gamesRouter = require("./videogamesRouter");
+const genresRouter = require("./genresRouter")
 
 router.use(express.json());
 router.use(morgan("dev"));
 router.use(cors());
 
 router.use("/videogames", gamesRouter);
+router.use("/genres", genresRouter)
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
