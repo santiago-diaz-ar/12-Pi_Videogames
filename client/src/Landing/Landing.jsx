@@ -1,20 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import style from "../Landing/Landing.module.css";
 
 export default function Landing_Page() {
   return (
     <>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <button>
-        <NavLink to="/Home">Ir a Home</NavLink>
-      </button>
-      <br />
-      <br />
-      <br />,<h1>Esta Ruta Landing esta en desarrollo</h1>
+      <div className={style.padre}>
+        <NavLink to="/Home">
+          <button className={style.boton}>Ir a Home </button>
+        </NavLink>
+        <br />,
+        <h1 className={style.texto}>
+          Los videojuegos, las mujeres, las motos y Dios son lo mejor que hay en
+          este mundo
+        </h1>
+      </div>
     </>
   );
 }
