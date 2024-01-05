@@ -1,9 +1,14 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+
+import Landing from "./Landing_Page/Landing_Page";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola</h1>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+      </Routes>
     </div>
   );
 }
