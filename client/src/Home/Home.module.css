@@ -1,0 +1,12 @@
+.padre {
+  border: 3px solid red;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.muestra {
+  border: 3px solid blue;
+}
