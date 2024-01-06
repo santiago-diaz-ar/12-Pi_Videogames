@@ -71,8 +71,10 @@ export default function Home() {
   ]
   `;
 
+  const jsondata = JSON.parse(videojuegos);
+
   useEffect(() => {
-    console.log(typeof videojuegos);
+    console.log(typeof jsondata);
   });
 
   return (
@@ -97,7 +99,15 @@ export default function Home() {
         </div>
         <br />
 
-        <div></div>
+        <div className={style.containertarjetas}>
+          {jsondata.map((element, indice) => {
+            return (
+              <div key={indice} className={style.tarjetas}>
+                {element.nombre}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

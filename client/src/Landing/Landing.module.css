@@ -1,11 +1,11 @@
 .padre {
   /* border: 3px solid red; */
-  height: 100vw;
+  height: 34rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("../../img//mandaloriano.jpg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+  background-image: url("../img//manda.jpg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del div */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
@@ -17,6 +17,7 @@
   color: whitesmoke;
   height: 3rem;
   padding: 1rem;
+  border: 2px solid gray;
 }
 
 .texto {
