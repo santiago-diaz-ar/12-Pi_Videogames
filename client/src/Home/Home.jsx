@@ -1,82 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import style from "./Home.module.css";
 
+import data from "../json/videojuegos.json";
+
 export default function Home() {
-  const videojuegos = `
-  [
-    {
-      "id": "1",
-      "nombre": "Halo",
-      "imagen": "en desarrollo",
-      "plataformas": "xbox",
-      "descripcion": "Buen juego de balo y extraterrestes",
-      "fecha de lanzamiento": "01/01/2023",
-      "rating": "10.0",
-      "generos": "accion,ficcion"
-    },
-  
-    {
-      "id": "1",
-      "nombre": "Halo",
-      "imagen": "en desarrollo",
-      "plataformas": "xbox",
-      "descripcion": "Buen juego de balo y extraterrestes",
-      "fecha de lanzamiento": "01/01/2023",
-      "rating": "10.0",
-      "generos": "accion,ficcion"
-    },
-  
-    {
-      "id": "1",
-      "nombre": "Halo",
-      "imagen": "en desarrollo",
-      "plataformas": "xbox",
-      "descripcion": "Buen juego de balo y extraterrestes",
-      "fecha de lanzamiento": "01/01/2023",
-      "rating": "10.0",
-      "generos": "accion,ficcion"
-    },
-    {
-      "id": "1",
-      "nombre": "Halo",
-      "imagen": "en desarrollo",
-      "plataformas": "xbox",
-      "descripcion": "Buen juego de balo y extraterrestes",
-      "fecha de lanzamiento": "01/01/2023",
-      "rating": "10.0",
-      "generos": "accion,ficcion"
-    },
-    {
-      "id": "1",
-      "nombre": "Halo",
-      "imagen": "en desarrollo",
-      "plataformas": "xbox",
-      "descripcion": "Buen juego de balo y extraterrestes",
-      "fecha de lanzamiento": "01/01/2023",
-      "rating": "10.0",
-      "generos": "accion,ficcion"
-    },
-    {
-      "id": "1",
-      "nombre": "Halo",
-      "imagen": "en desarrollo",
-      "plataformas": "xbox",
-      "descripcion": "Buen juego de balo y extraterrestes",
-      "fecha de lanzamiento": "01/01/2023",
-      "rating": "10.0",
-      "generos": "accion,ficcion"
-    }
-  ]
-  `;
-
-  const jsondata = JSON.parse(videojuegos);
-
-  useEffect(() => {
-    console.log(typeof jsondata);
-  });
-
   return (
     <>
       <div className={style.padre}>
@@ -100,13 +29,14 @@ export default function Home() {
         <br />
 
         <div className={style.containertarjetas}>
-          {jsondata.map((element, indice) => {
-            return (
-              <div key={indice} className={style.tarjetas}>
-                {element.nombre}
-              </div>
-            );
-          })}
+          {data?.map((item, index) => (
+            <div key={index} className={style.tarjetas}>
+              {item?.nombre}
+
+              <img src={item?.imagen} alt="" className={style.imagen} />
+              <div>{item?.genero}</div>
+            </div>
+          ))}
         </div>
       </div>
     </>

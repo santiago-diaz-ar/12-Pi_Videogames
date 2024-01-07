@@ -1,6 +1,6 @@
 .padre {
   /* border: 3px solid red; */
-  height: 34rem;
+  height: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,21 +8,33 @@
   background-image: url("../img//mandaloriano.jpg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del div */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-.muestra {
-  border: 3px solid blue;
+  cursor: pointer;
 }
 
 .containertarjetas {
-  width: 25%;
+  width: 90%;
+  /*  border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Cambiado de nowrap a wrap */
+  height: auto;
+  justify-content: space-around;
 }
 
 .tarjetas {
-  border: 2px solid red;
-  width: 100%;
-  margin-bottom: 0.2rem;
-  height: 2.5rem;
-  color: white;
-  border-radius: 0.5rem;
+  border: 2px solid black;
+  color: black;
+  border-radius: 0.3rem;
+  margin: 0.1rem;
+  height: 13rem;
+  width: 10rem;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+.imagen {
+  background-size: cover; /* Ajusta la imagen al tamaño del div */
+  background-repeat: no-repeat;
+  width: 100% !important;
+  height: 10rem !important;
 }
