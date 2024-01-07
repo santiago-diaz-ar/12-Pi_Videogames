@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <div className={style.padre}>
+        <br />
         <button /* className={style.muestra} */>
           <NavLink to="/">Volver</NavLink>
         </button>
@@ -38,6 +39,10 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <br />
+        <br />
+        <br />
+        <div className={style.footer}>Footer en Desarrollo</div>
       </div>
     </>
   );
