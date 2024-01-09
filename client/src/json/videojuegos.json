@@ -11,7 +11,7 @@
   },
 
   {
-    "id": "1",
+    "id": "2",
     "nombre": "Halo",
     "imagen": "https://th.bing.com/th/id/R.aa36fbf805db5ab34b1a35387687abb7?rik=X0uCWwlVZ%2bRiLQ&riu=http%3a%2f%2ff.vividscreen.info%2fsoft%2faf0be721bb36c938d05be9e2dd80fffe%2fHalo-3-1920x1200.jpg&ehk=xmDnVEWFQocCmMHWG5MxiEAjnXMYQqRsSxu%2bj%2bQpTOs%3d&risl=&pid=ImgRaw&r=0",
     "plataformas": "xbox",
@@ -22,7 +22,7 @@
   },
 
   {
-    "id": "1",
+    "id": "3",
     "nombre": "Halo",
     "imagen": "https://th.bing.com/th/id/OIP.PfJmBrY4ULxSzCZOpGVjUAHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain",
     "plataformas": "xbox",
@@ -32,7 +32,7 @@
     "genero": "accion,ficcion"
   },
   {
-    "id": "1",
+    "id": "4",
     "nombre": "Halo",
     "imagen": "https://th.bing.com/th/id/OIP.WkmZalvGvHWJbF87nJpWtQHaE7?w=1920&h=1278&rs=1&pid=ImgDetMain",
     "plataformas": "xbox",
@@ -42,7 +42,7 @@
     "genero": "accion,ficcion"
   },
   {
-    "id": "1",
+    "id": "5",
     "nombre": "Halo",
     "imagen": "https://th.bing.com/th/id/OIP.TH85iwP-ZS5r5-I6U9lrdAHaHX?w=896&h=892&rs=1&pid=ImgDetMain",
     "plataformas": "xbox",
@@ -52,7 +52,7 @@
     "genero": "accion,ficcion"
   },
   {
-    "id": "1",
+    "id": "6",
     "nombre": "Halo",
     "imagen": "https://th.bing.com/th/id/OIP.MRw5spednWBaoM2VmG3q9QHaHa?rs=1&pid=ImgDetMain",
     "plataformas": "xbox",

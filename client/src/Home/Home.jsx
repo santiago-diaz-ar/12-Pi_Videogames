@@ -31,11 +31,13 @@ export default function Home() {
 
         <div className={style.containertarjetas}>
           {data?.map((item, index) => (
-            <div key={index} className={style.tarjetas}>
-              {item?.nombre}
+            <div className={style.tarjetas} key={index}>
+              <NavLink to={`/Detail/${item.id}`}>
+                {item?.nombre}
 
-              <img src={item?.imagen} alt="" className={style.imagen} />
-              <div>{item?.genero}</div>
+                <img src={item?.imagen} alt="" className={style.imagen} />
+                <div>{item?.genero}</div>
+              </NavLink>
             </div>
           ))}
         </div>

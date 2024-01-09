@@ -1,0 +1,13 @@
+.Padre {
+  border: 2px solid red;
+}
+
+.imagen {
+  width: 400px;
+  height: 400px;
+  border-radius: 3px;
+}
+
+.descripcion {
+  height: 400px;
+}
