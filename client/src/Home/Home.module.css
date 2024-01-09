@@ -1,6 +1,5 @@
 .padre {
   /* border: 3px solid red; */
-  height: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +24,6 @@
   color: black;
   border-radius: 0.3rem;
   margin: 0.4rem;
-  height: 13rem;
   width: 10rem;
   margin-bottom: 1rem;
   background-color: white;

@@ -23,8 +23,6 @@ export default function Detail() {
       });
   }, [id]);
 
-  console.log(datos);
-
   return (
     <div>
       <div className={style.Padre}>

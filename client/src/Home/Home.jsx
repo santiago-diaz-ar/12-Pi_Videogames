@@ -1,11 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import axios from "axios";
+
+import { useEffect, useState } from "react";
+
 import style from "./Home.module.css";
 
-import data from "../json/videojuegos.json";
-
 export default function Home() {
+  const [juegos, setJuegos] = useState();
+
+  useEffect(() => {
+    axios("http://localhost:3001/videogames")
+      .then((response) => {
+        setJuegos(response?.data?.results);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <div className={style.padre}>
@@ -30,14 +42,22 @@ export default function Home() {
         <br />
 
         <div className={style.containertarjetas}>
-          {data?.map((item, index) => (
-            <div className={style.tarjetas} key={index}>
-              <NavLink to={`/Detail/${item.id}`}>
-                {item?.nombre}
-
-                <img src={item?.imagen} alt="" className={style.imagen} />
-                <div>{item?.genero}</div>
+          {juegos?.map((e, i) => (
+            <div key={i} className={style.tarjetas}>
+              <NavLink to={`/Detail/${e.id}`}>
+                <img
+                  src={e?.background_image}
+                  alt="imagen no disponible"
+                  className={style.imagen}
+                />
               </NavLink>
+              <div>{e?.name}</div>
+              <div>
+                <strong>Generos:</strong>
+                {e?.genres?.map((e, i) => (
+                  <div key={i}>{e?.name}</div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
