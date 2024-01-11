@@ -27,7 +27,11 @@ export default function Home() {
         </button>
         <br />
         <button>
-          <NavLink to="/About">Ir A Sobre mi</NavLink>
+          <NavLink to="/About">About</NavLink>
+        </button>
+        <br />
+        <button>
+          <NavLink to="/Form">New Videogame</NavLink>
         </button>
         <br />
         <div>
@@ -35,9 +39,9 @@ export default function Home() {
             type="text"
             name="Busquedas"
             id=""
-            placeholder="Buscar videojuegos"
+            placeholder="Search Videogames"
           />
-          <button>Buscar</button>
+          <button>Search</button>
         </div>
         <br />
 

@@ -5,6 +5,7 @@ import Landing from "./Landing/Landing";
 import Home from "./Home/Home";
 import About from "./About/About";
 import Detail from "./Detail/Detail";
+import Form from "./Form/Form";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Detail/:id" element={<Detail />} />
+        <Route path="/Form" element={<Form />} />
       </Routes>
     </div>
   );
