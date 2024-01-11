@@ -54,7 +54,7 @@ gamesRouter.post("/PostVideogame", async (req, res) => {
       release_date,
       rating
     );
-    return res.status(400).json(creacion);
+    return res.status(200).json(creacion);
   } catch (error) {
     return res.status(400).json(error.message);
   }
