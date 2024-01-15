@@ -15,7 +15,7 @@ export default function SobreMi() {
       <br />
       <br />
       <br />
-      <h1>Sobre mi en Desarrollo</h1>
+      <h1>aquiles y vainilla jugan juntos</h1>
       <br />
       <br />
       <br />

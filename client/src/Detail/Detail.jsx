@@ -2,7 +2,7 @@ import React from "react";
 
 import style from "./Detail.module.css";
 
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
@@ -24,8 +24,8 @@ export default function Detail() {
   }, [id]);
 
   return (
-    <div>
-      <div className={style.Padre}>
+    <div className={style.Padre}>
+      <div className={style.one}>
         <br />
         <h2>{datos?.name}</h2>
         <img
@@ -33,6 +33,11 @@ export default function Detail() {
           alt="img no disponible"
           className={style.imagen}
         />
+        <NavLink to={"/Home"}>
+          <button>Volver</button>
+        </NavLink>
+      </div>
+      <div className={style.two}>
         <br />
         <div>
           <strong>Plataformas:</strong>

@@ -129,6 +129,12 @@ function Form() {
           className={style.inputs}
         />
         <br />
+        <select name="genres" id="lang">
+          <option value="accion">accion</option>
+          <option value="terror">terror</option>
+          <option value="ficcion">ficcion</option>
+        </select>
+        <br />
         <button type="submit">Create Videogame</button>
       </form>
     </>
