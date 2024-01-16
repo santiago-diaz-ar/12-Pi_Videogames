@@ -8,6 +8,8 @@ import { useState } from "react";
 
 import validate from "./validate";
 
+import { NavLink } from "react-router-dom";
+
 function Form() {
   const [form, setForm] = useState({
     name: "",
@@ -65,10 +67,9 @@ function Form() {
 
   return (
     <>
+      <br />
+      <NavLink to={"/Home"}>volver</NavLink>
       <form action="" onSubmit={handleSubmit} className={style.Padre}>
-        <br />
-        <br />
-        <br />
         <br />
         <br />
 
