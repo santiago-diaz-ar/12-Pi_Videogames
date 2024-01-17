@@ -1,26 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import axios from "axios";
-
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import style from "./Home.module.css";
 
 export default function Home() {
-  const [juegos, setJuegos] = useState([]);
+  const games = useSelector((state) => state?.games);
 
-  useEffect(() => {
-    if (juegos.length === 0) {
-      axios("http://localhost:3001/videogames")
-        .then((response) => {
-          setJuegos(response?.data?.results);
-        })
-        .catch((error) => console.log(error));
-    }
-  });
-
-  console.log(juegos.length);
   return (
     <>
       <div className={style.padre}>
@@ -66,7 +53,7 @@ export default function Home() {
           <br />
           <br />
           <div className={style.containertarjetas}>
-            {juegos?.map((e, i) => (
+            {games?.results?.map((e, i) => (
               <div key={i} className={style.tarjetas}>
                 <div>{e?.name}</div>
                 <NavLink to={`/Detail/${e.id}`}>

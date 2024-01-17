@@ -1,1 +1,2 @@
-export const Traer_Todos_Videojuegos = "Traer_Todos_Videojuegos";
+export const GET_ALL_GAMES = "GET_ALL_GAMES";
+export const GET_GENRES = "GET_GENRES";
