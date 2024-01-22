@@ -4,32 +4,40 @@ import style from "./Detail.module.css";
 
 import { useParams, NavLink } from "react-router-dom";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+
+import { detail_games } from "../store-reducer/actions";
 
 export default function Detail() {
+  const dispatch = useDispatch();
+
   const { id } = useParams();
 
-  const [datos, setDatos] = useState({});
-
   useEffect(() => {
-    axios(`http://localhost:3001/videogames/${id}`)
-      .then((response) => {
-        setDatos(response.data);
-      })
-      .catch((error) => {
-        console.log("lea el error", error);
-      });
-  }, [id]);
+    dispatch(detail_games(id));
+  });
+
+  const detailStore = useSelector((state) => state.detail).data;
+
+  /* const detailStoreOFFline = {
+    name: "Modo Offline",
+    parent_platforms: [{ platform: { name: "Xbox" } }],
+    released: "2",
+    ratings_count: "10",
+    genres: [{ name: "AMOR" }],
+    description:
+      "Solo modo off line soy un hacker de primera todo en js son objetos",
+  }; */
 
   return (
     <div className={style.Padre}>
       <div className={style.one}>
         <br />
-        <h2>{datos?.name}</h2>
+        <h2>{detailStore?.name}</h2>
         <img
-          src={datos?.background_image}
+          src={detailStore?.background_image}
           alt="img no disponible"
           className={style.imagen}
         />
@@ -41,25 +49,25 @@ export default function Detail() {
         <br />
         <div>
           <strong>Plataformas:</strong>
-          {datos?.parent_platforms?.map((e, i) => (
+          {detailStore?.parent_platforms.map((e, i) => (
             <div key={i}>{e?.platform.name}</div>
           ))}
         </div>
         <br />
-        <strong>fecha de lanzamiento:</strong> {datos?.released}
+        <strong>fecha de lanzamiento:</strong> {detailStore?.released}
         <br />
         <br />
         <strong>rating:</strong>
-        {datos?.ratings_count}
+        {detailStore?.ratings_count}
         <br />
         <br />
         <strong> Generos:</strong>
-        {datos.genres?.map((e, i) => (
+        {detailStore?.genres.map((e, i) => (
           <li key={i}>{e?.name}</li>
         ))}
         <br />
         <div className={style.descripcion}>
-          <strong>Description</strong> {datos?.description}
+          <strong>Description</strong> {detailStore?.description}
         </div>
         <br />
       </div>

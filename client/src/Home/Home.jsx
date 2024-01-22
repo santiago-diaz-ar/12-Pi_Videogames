@@ -1,12 +1,31 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import style from "./Home.module.css";
 
+import { filter_alfabetico, get_all_games } from "../store-reducer/actions";
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const dispatch = useDispatch();
+
+  const [loadingDatos, setLoadingDatos] = useState(false);
+
   const games = useSelector((state) => state?.games);
+
+  useEffect(() => {
+    if (loadingDatos === false && games.length === 0) {
+      setLoadingDatos(true);
+      dispatch(get_all_games());
+    }
+  }, [dispatch, loadingDatos, games]);
+
+  const ordenAlfabetico = (event) => {
+    dispatch(filter_alfabetico(event.target.value));
+  };
 
   return (
     <>
@@ -38,8 +57,8 @@ export default function Home() {
           </div>
           <br />
 
-          <select name="Filtros" id="">
-            <option value="">Por orden alfabetico </option>
+          <select name="Orden alfabetico" id="" onChange={ordenAlfabetico}>
+            <option value="A-Z">Por orden alfabetico default A-Z</option>
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
           </select>
@@ -53,20 +72,20 @@ export default function Home() {
           <br />
           <br />
           <div className={style.containertarjetas}>
-            {games?.results?.map((e, i) => (
+            {games?.map((e, i) => (
               <div key={i} className={style.tarjetas}>
-                <div>{e?.name}</div>
-                <NavLink to={`/Detail/${e.id}`}>
-                  <img
-                    src={e?.background_image}
-                    alt="imagen no disponible"
-                    className={style.imagen}
-                  />
+                <NavLink to={`/Detail/${e?.id}`}>
+                  <div>{e?.name}</div>
                 </NavLink>
+                <img
+                  src={e?.background_image}
+                  alt="imagen no disponible"
+                  className={style?.imagen}
+                />
 
                 <div>
                   <strong>Generos:</strong>
-                  {e?.genres?.map((e, i) => (
+                  {e?.genres.map((e, i) => (
                     <div key={i}>{e?.name}</div>
                   ))}
                 </div>
