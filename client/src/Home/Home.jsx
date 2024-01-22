@@ -32,73 +32,75 @@ export default function Home() {
   return (
     <>
       <div className={style.padre}>
+        <div className={style.barraUno}>
+          <NavLink to="/">
+            <button className={style.boton}>Volver</button>
+          </NavLink>
+          <NavLink to="/About">
+            <button className={style.botonDos}>About</button>
+          </NavLink>
+        </div>
+
+        <h1 className={style.texto}>VideoGames Santi</h1>
+
         <div>
-          <br />
-          <button /* className={style.muestra} */>
-            <NavLink to="/">Volver</NavLink>
-          </button>
-          <br />
-          <button>
-            <NavLink to="/About">About</NavLink>
-          </button>
-          <br />
-          <button>
-            <NavLink to="/Form">New Videogame</NavLink>
-          </button>
+          <input
+            type="text"
+            name="Busquedas"
+            id=""
+            placeholder="Search Videogames"
+            className={style.barraBusqueda}
+          />
+          <button className={style.botonSearch}>Search</button>
 
-          <br />
-          <br />
-          <div>
-            <input
-              type="text"
-              name="Busquedas"
-              id=""
-              placeholder="Search Videogames"
-            />
-            <button>Search</button>
-          </div>
-          <br />
-
-          <select name="Orden alfabetico" id="" onChange={ordenAlfabetico}>
+          <NavLink to="/Form">
+            <button className={style.boton}>New Videogame</button>
+          </NavLink>
+          <select
+            name="Orden alfabetico"
+            id=""
+            onChange={ordenAlfabetico}
+            className={style.boton}
+          >
             <option value="A-Z">Por orden alfabetico default A-Z</option>
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
           </select>
 
-          <select name="Por generos" id="">
+          <select name="Por generos" id="" className={style.boton}>
             <option value="">Generos en Desarrollo</option>
             <option value="">accion</option>
             <option value="">terror</option>
           </select>
-          <br />
-          <br />
-          <br />
-          <div className={style.containertarjetas}>
-            {games?.map((e, i) => (
-              <div key={i} className={style.tarjetas}>
-                <NavLink to={`/Detail/${e?.id}`}>
-                  <div>{e?.name}</div>
-                </NavLink>
-                {/*  <img
-                  src={e?.background_image}
-                  alt="imagen no disponible"
-                  className={style?.imagen}
-                /> */}
-
-                <div>
-                  <strong>Generos:</strong>
-                  {e?.genres.map((e, i) => (
-                    <div key={i}>{e?.name}</div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          <br />
-          <br />
-          <br />
-          <div className={style.footer}>Footer en Desarrollo</div>
         </div>
+
+        <br />
+        <br />
+        <div className={style.containertarjetas}>
+          {games?.map((e, i) => (
+            <div key={i} className={style.tarjetas}>
+              <NavLink to={`/Detail/${e?.id}`}>
+                <div>{e?.name}</div>
+              </NavLink>
+              {/* <img
+                src={e?.background_image}
+                alt="imagen no disponible"
+                className={style?.imagen}
+              /> */}
+
+              <div>
+                <strong>Generos:</strong>
+                {e?.genres.map((e, i) => (
+                  <div key={i}>{e?.name}</div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <br />
+        <br />
+        <br />
+        <div className={style.footer}>Footer en Desarrollo</div>
       </div>
     </>
   );
