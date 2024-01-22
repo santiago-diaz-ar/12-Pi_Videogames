@@ -1,9 +1,4 @@
-import {
-  GET_ALL_GAMES,
-  DETAIL_GAMES,
-  FILTER_ALFABETICO,
-  ORDER_BY_NAME,
-} from "./types/types";
+import { GET_ALL_GAMES, DETAIL_GAMES, ORDER_BY_NAME } from "./types/types";
 
 const inicialState = {
   games: [],
@@ -39,10 +34,10 @@ const rootReducer = (state = inicialState, { type, payload }) => {
               return 0; // no hay cambios
             })
           : state.games?.sort((a, b) => {
-              if (a?.name > b?.name) {
+              if (a.name > b.name) {
                 return -1; // A antes que B
               }
-              if (b?.name > a?.name) {
+              if (b.name > a?.name) {
                 return 1; // B antes que A
               }
               return 0; // no hay cambios

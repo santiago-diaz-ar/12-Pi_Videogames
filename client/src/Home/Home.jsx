@@ -14,7 +14,13 @@ export default function Home() {
 
   const [loadingDatos, setLoadingDatos] = useState(false);
 
-  const games = useSelector((state) => state?.games);
+  const ordenAlfabetico = async (event) => {
+    dispatch(filter_alfabetico(event.target.value));
+  };
+  const games = useSelector((state) => state.games);
+
+  const prueba = useSelector((state) => state);
+  console.log(prueba);
 
   useEffect(() => {
     if (loadingDatos === false && games.length === 0) {
@@ -22,10 +28,6 @@ export default function Home() {
       dispatch(get_all_games());
     }
   }, [dispatch, loadingDatos, games]);
-
-  const ordenAlfabetico = (event) => {
-    dispatch(filter_alfabetico(event.target.value));
-  };
 
   return (
     <>
@@ -77,11 +79,11 @@ export default function Home() {
                 <NavLink to={`/Detail/${e?.id}`}>
                   <div>{e?.name}</div>
                 </NavLink>
-                <img
+                {/*  <img
                   src={e?.background_image}
                   alt="imagen no disponible"
                   className={style?.imagen}
-                />
+                /> */}
 
                 <div>
                   <strong>Generos:</strong>
