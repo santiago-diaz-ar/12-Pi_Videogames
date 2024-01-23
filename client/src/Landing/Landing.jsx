@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "../Landing/Landing.module.css";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+/* import { useDispatch } from "react-redux";
 
-import { get_all_games } from "../store-reducer/actions";
+import { get_all_games } from "../store-reducer/actions"; */
 
 export default function Landing_Page() {
-  const dispatch = useDispatch();
+  /* const dispatch = useDispatch();
 
   const [loadingData, setLoadingData] = useState(false);
 
@@ -16,14 +16,14 @@ export default function Landing_Page() {
       setLoadingData(true);
       dispatch(get_all_games());
     }
-  }, [dispatch, loadingData]);
+  }, [dispatch, loadingData]); */
 
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsExpanded(!isExpanded);
-    }, 500);
+    }, 700);
     return () => clearInterval(interval);
   }, [isExpanded]);
   return (
@@ -36,11 +36,11 @@ export default function Landing_Page() {
           className={`my-div ${isExpanded ? "expanded" : ""}`}
           style={{
             transform: isExpanded ? "scale(1.5)" : "scale(1)",
-            transition: "transform 0.5s ease",
+            transition: "transform 3s ease",
           }}
         >
           <strong className={style.texto}>
-            💲 Obtener los dos primeros mese Gratis💲
+            💲 Obtener los dos primeros meses Gratis💲
           </strong>
         </div>
         <br />

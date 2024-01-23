@@ -1,4 +1,10 @@
-import { GET_ALL_GAMES, DETAIL_GAMES, ORDER_BY_NAME } from "./types/types";
+import {
+  GET_ALL_GAMES,
+  DETAIL_GAMES,
+  ORDER_BY_NAME,
+  ORDER_BY_GENRES_AND_DB,
+  GET_GENRES,
+} from "./types/types";
 
 const inicialState = {
   games: [],
@@ -45,6 +51,17 @@ const rootReducer = (state = inicialState, { type, payload }) => {
       return {
         ...state,
         games: ordenarName,
+      };
+
+    case GET_GENRES:
+      console.log(payload);
+      return {
+        ...state,
+        genres: payload,
+      };
+    case ORDER_BY_GENRES_AND_DB:
+      return {
+        ...state,
       };
 
     default:
