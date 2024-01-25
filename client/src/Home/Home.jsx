@@ -8,11 +8,11 @@ import style from "./Home.module.css";
 import {
   filter_alfabetico,
   get_all_games,
-  filter_genres_and_db,
+  filter_genres,
   get_genres,
 } from "../store-reducer/actions";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -23,27 +23,22 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(get_genres());
+    dispatch(get_all_games());
   }, [dispatch]);
-
-  const [loadingDatos, setLoadingDatos] = useState(false);
 
   const ordenAlfabetico = async (event) => {
     if (event.target.value === "A-Z" || event.target.value === "Z-A") {
       dispatch(filter_alfabetico(event.target.value));
-    } else {
-      dispatch(filter_genres_and_db(event.target.value));
     }
   };
 
-  /* const prueba = useSelector((state) => state);
-  console.log(typeof prueba); */
+  const filtroGeneros = (event) => {
+    /* console.log(event.target.value); */
+    dispatch(filter_genres(event.target.value));
+  };
 
-  useEffect(() => {
-    if (loadingDatos === false && games.length === 0) {
-      setLoadingDatos(true);
-      dispatch(get_all_games());
-    }
-  }, [dispatch, loadingDatos, games]);
+  const prueba = useSelector((state) => state);
+  console.log(typeof prueba);
 
   return (
     <>
@@ -85,7 +80,7 @@ export default function Home() {
           <select
             name="Por generos"
             id="2"
-            onChange={ordenAlfabetico}
+            onChange={filtroGeneros}
             className={style.boton}
           >
             {genresApi?.map((e, i) => (

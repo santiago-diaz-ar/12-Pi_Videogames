@@ -2,7 +2,7 @@ import {
   GET_ALL_GAMES,
   DETAIL_GAMES,
   ORDER_BY_NAME,
-  ORDER_BY_GENRES_AND_DB,
+  ORDER_BY_GENRES,
   GET_GENRES,
 } from "./types/types";
 
@@ -54,14 +54,18 @@ const rootReducer = (state = inicialState, { type, payload }) => {
       };
 
     case GET_GENRES:
-      console.log(payload);
       return {
         ...state,
         genres: payload,
       };
-    case ORDER_BY_GENRES_AND_DB:
+
+    case ORDER_BY_GENRES:
+      const aplitfiltro = state.games.filter((e) =>
+        e.genres.find((e) => e.name === payload)
+      );
       return {
         ...state,
+        games: aplitfiltro,
       };
 
     default:

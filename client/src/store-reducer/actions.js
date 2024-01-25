@@ -5,7 +5,7 @@ import {
   DETAIL_GAMES,
   GET_GENRES,
   ORDER_BY_NAME,
-  ORDER_BY_GENRES_AND_DB,
+  ORDER_BY_GENRES,
 } from "./types/types";
 
 export const get_all_games = () => {
@@ -32,13 +32,13 @@ export const detail_games = (id) => {
 export const get_genres = () => {
   return async function (dispatch) {
     const data = await axios.get("http://localhost:3001/genres");
-    const prueba = data.data;
-    return dispatch({ type: GET_GENRES, payload: prueba });
+    const genres = data.data;
+    return dispatch({ type: GET_GENRES, payload: genres });
   };
 };
 
-export const filter_genres_and_db = (filtro) => {
+export const filter_genres = (filtro) => {
   return async function (dispatch) {
-    return dispatch({ type: ORDER_BY_GENRES_AND_DB, payload: filtro });
+    return dispatch({ type: ORDER_BY_GENRES, payload: filtro });
   };
 };
