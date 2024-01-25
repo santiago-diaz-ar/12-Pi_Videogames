@@ -60,12 +60,17 @@ const rootReducer = (state = inicialState, { type, payload }) => {
       };
 
     case ORDER_BY_GENRES:
-      const aplitfiltro = state.games.filter((e) =>
-        e.genres.find((e) => e.name === payload)
-      );
+      let nada = "";
+      if (payload) {
+        state.games = state.all_games;
+        const aplitfiltro = state.games.filter((e) =>
+          e.genres.find((e) => e.name === payload)
+        );
+        nada = aplitfiltro;
+      }
       return {
         ...state,
-        games: aplitfiltro,
+        games: nada,
       };
 
     default:
