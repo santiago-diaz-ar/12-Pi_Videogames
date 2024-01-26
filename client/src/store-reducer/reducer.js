@@ -4,6 +4,7 @@ import {
   ORDER_BY_NAME,
   ORDER_BY_GENRES,
   GET_GENRES,
+  SEARCH_VIDEOGAME,
 } from "./types/types";
 
 const inicialState = {
@@ -72,6 +73,28 @@ const rootReducer = (state = inicialState, { type, payload }) => {
         ...state,
         games: nada,
       };
+
+    case SEARCH_VIDEOGAME:
+      const videoGames = state.games;
+      const buscadorFunct = (payload, videoGames) => {
+        //me permite buscar el name en minuscula o mayuscula, o si la busqueda no es exacta
+        const regex = new RegExp(payload, "i"); // busco no exacta
+        return videoGames.filter((game) => regex.test(game.name));
+      };
+      const buscador = buscadorFunct(payload, videoGames);
+      //console.log(buscador);
+
+      if (buscador.length) {
+        return {
+          ...state,
+          games: buscador,
+        };
+      } else {
+        return {
+          ...state,
+          games: state.all_games,
+        };
+      }
 
     default:
       return {

@@ -10,6 +10,7 @@ import {
   get_all_games,
   filter_genres,
   get_genres,
+  busquedaVideogamesAction,
 } from "../store-reducer/actions";
 
 import { useEffect } from "react";
@@ -33,8 +34,11 @@ export default function Home() {
   };
 
   const filtroGeneros = (event) => {
-    /* console.log(event.target.value); */
     dispatch(filter_genres(event.target.value));
+  };
+
+  const busquedaVideogames = (event) => {
+    dispatch(busquedaVideogamesAction(event.target.value));
   };
 
   const prueba = useSelector((state) => state);
@@ -61,6 +65,7 @@ export default function Home() {
             id=""
             placeholder="Search Videogames"
             className={style.barraBusqueda}
+            onChange={busquedaVideogames}
           />
 
           <NavLink to="/Form">

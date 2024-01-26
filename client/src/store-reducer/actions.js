@@ -6,6 +6,7 @@ import {
   GET_GENRES,
   ORDER_BY_NAME,
   ORDER_BY_GENRES,
+  SEARCH_VIDEOGAME,
 } from "./types/types";
 
 export const get_all_games = () => {
@@ -40,5 +41,11 @@ export const get_genres = () => {
 export const filter_genres = (filtro) => {
   return async function (dispatch) {
     return dispatch({ type: ORDER_BY_GENRES, payload: filtro });
+  };
+};
+
+export const busquedaVideogamesAction = (busqueda) => {
+  return async function (dispatch) {
+    return dispatch({ type: SEARCH_VIDEOGAME, payload: busqueda });
   };
 };

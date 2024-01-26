@@ -4,7 +4,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: auto;
+  height: 100vb;
+  background-image: url("../img/neon.jpeg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen al tamaño del div */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .ContenedorImagen {
@@ -12,7 +15,7 @@
   height: 320px;
   width: 320px;
   border-radius: 60%;
-  background-image: url("../img/juniorDevelop.jpg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+  background-image: url("../img/manda.jpg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del div */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   margin-right: 10px;
