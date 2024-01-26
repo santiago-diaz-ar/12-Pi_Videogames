@@ -104,11 +104,11 @@ export default function Home() {
               <NavLink to={`/Detail/${e?.id}`}>
                 <div>{e?.name}</div>
               </NavLink>
-              {/* <img
+              <img
                 src={e?.background_image}
                 alt="imagen no disponible"
                 className={style?.imagen}
-              /> */}
+              />
 
               <div>
                 <strong>Generos:</strong>
@@ -119,9 +119,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <br />
-        <br />
-        <br />
         <div className={style.footer}>Footer en Desarrollo</div>
       </div>
     </>

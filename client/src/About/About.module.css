@@ -12,8 +12,8 @@
 
 .ContenedorImagen {
   border: 1px solid rgba(0, 0, 255, 0.612);
-  height: 320px;
-  width: 320px;
+  height: 420px;
+  width: 420px;
   border-radius: 60%;
   background-image: url("../img/manda.jpg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del div */

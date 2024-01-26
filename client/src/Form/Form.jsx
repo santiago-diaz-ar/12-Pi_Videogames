@@ -67,10 +67,9 @@ function Form() {
 
   return (
     <>
-      <br />
-      <NavLink to={"/Home"}>volver</NavLink>
       <form action="" onSubmit={handleSubmit} className={style.Padre}>
         <br />
+        <NavLink to={"/Home"}>volver</NavLink>
         <br />
 
         <strong>Create new Videogame</strong>
