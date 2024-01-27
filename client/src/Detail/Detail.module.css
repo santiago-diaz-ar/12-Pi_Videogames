@@ -5,7 +5,8 @@
   background-image: url("../img/neon.jpeg"); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del div */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
-  height: 100vb;
+  height: 100%;
+  width: 100%;
 }
 .one {
   /* border: 2px solid magenta; */
@@ -29,7 +30,11 @@
 .imagen {
   width: 90%;
   height: 500px;
-  border-radius: 30%;
+  border-radius: 5%;
   margin: 0.3rem;
   /*  border: 2px solid red; */
+}
+
+.volver {
+  cursor: pointer;
 }

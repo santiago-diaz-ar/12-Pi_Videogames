@@ -42,7 +42,7 @@ export default function Detail() {
           className={style.imagen}
         />
         <NavLink to={"/Home"}>
-          <button>Volver</button>
+          <button className={style.volver}>Volver</button>
         </NavLink>
       </div>
       <div className={style.two}>
@@ -66,9 +66,6 @@ export default function Detail() {
           <li key={i}>{e?.name}</li>
         ))}
         <br />
-        <div className={style.descripcion}>
-          <strong>Description</strong> {detailStore?.description}
-        </div>
         <br />
       </div>
     </div>

@@ -84,7 +84,7 @@ const rootReducer = (state = inicialState, { type, payload }) => {
       const buscador = buscadorFunct(payload, videoGames);
       //console.log(buscador);
 
-      if (buscador.length) {
+      if (buscador.length > 1) {
         return {
           ...state,
           games: buscador,

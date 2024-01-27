@@ -13,7 +13,7 @@ import {
   busquedaVideogamesAction,
 } from "../store-reducer/actions";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -41,6 +41,15 @@ export default function Home() {
     dispatch(busquedaVideogamesAction(event.target.value));
   };
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsExpanded(!isExpanded);
+    }, 700);
+    return () => clearInterval(interval);
+  }, [isExpanded]);
+
   const prueba = useSelector((state) => state);
   console.log(typeof prueba);
 
@@ -55,9 +64,15 @@ export default function Home() {
             <button className={style.botonDos}>About</button>
           </NavLink>
         </div>
-
-        <h1 className={style.texto}>VideoGames Santi</h1>
-
+        <div
+          className={`my-div ${isExpanded ? "expanded" : ""}`}
+          style={{
+            transform: isExpanded ? "scale(1.5)" : "scale(1)",
+            transition: "transform 3s ease",
+          }}
+        >
+          <h1 className={style.texto}>VideoGames Santi</h1>
+        </div>
         <div>
           <input
             type="text"
@@ -93,6 +108,7 @@ export default function Home() {
                 {e?.name}
               </option>
             ))}
+            <option value="db">Base De Datos</option>
           </select>
         </div>
 
@@ -103,19 +119,20 @@ export default function Home() {
             <div key={i} className={style.tarjetas}>
               <NavLink to={`/Detail/${e?.id}`}>
                 <div>{e?.name}</div>
-              </NavLink>
-              <img
-                src={e?.background_image}
-                alt="imagen no disponible"
-                className={style?.imagen}
-              />
 
-              <div>
-                <strong>Generos:</strong>
-                {e?.genres.map((e, i) => (
-                  <div key={i}>{e?.name}</div>
-                ))}
-              </div>
+                <img
+                  src={e?.background_image}
+                  alt="imagen no disponible"
+                  className={style?.imagen}
+                />
+
+                <div>
+                  <strong>Generos:</strong>
+                  {e?.genres.map((e, i) => (
+                    <div key={i}>{e?.name}</div>
+                  ))}
+                </div>
+              </NavLink>
             </div>
           ))}
         </div>

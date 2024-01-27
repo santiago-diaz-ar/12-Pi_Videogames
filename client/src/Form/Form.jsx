@@ -10,6 +10,8 @@ import validate from "./validate";
 
 import { NavLink } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 function Form() {
   const [form, setForm] = useState({
     name: "",
@@ -42,6 +44,8 @@ function Form() {
     );
   };
 
+  const generos = useSelector((state) => state.genres);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -69,7 +73,9 @@ function Form() {
     <>
       <form action="" onSubmit={handleSubmit} className={style.Padre}>
         <br />
-        <NavLink to={"/Home"}>volver</NavLink>
+        <NavLink to={"/Home"}>
+          <button>volver </button>
+        </NavLink>
         <br />
 
         <strong>Create new Videogame</strong>
@@ -130,9 +136,13 @@ function Form() {
         />
         <br />
         <select name="genres" id="lang">
-          <option value="accion">accion</option>
-          <option value="terror">terror</option>
-          <option value="ficcion">ficcion</option>
+          {generos.map((e, i) => {
+            return (
+              <option key={i} value="">
+                {e.name}
+              </option>
+            );
+          })}
         </select>
         <br />
         <button type="submit">Create Videogame</button>

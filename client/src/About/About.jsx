@@ -8,7 +8,7 @@ export default function SobreMi() {
     <div className={style.Principal}>
       <br />
       <NavLink to="/Home">
-        <button>Volver</button>
+        <button className={style.volver}>Volver</button>
       </NavLink>
       <br />
       <div>Develop encargado de toda la pagina:</div>
@@ -42,7 +42,7 @@ export default function SobreMi() {
       <div>Lenguajes utilizados para la app Videogames:</div>
       <strong>Javascript, React, Node, Sql, Sequelize</strong>
       <br />
-      <button>Ir A facebook De develop</button>
+      <button className={style.volver}>Ir A facebook De develop</button>
       <br />
     </div>
   );
