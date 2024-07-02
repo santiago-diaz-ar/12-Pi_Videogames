@@ -51,7 +51,7 @@ export default function Landing_Page() {
 
           <button className={style.boton}>Registrate</button>
 
-          <button className={style.boton}>Iniciar Sesion con Google💯</button>
+          <button className={style.boton}>Google💯</button>
         </div>
       </div>
     </>
