@@ -50,8 +50,8 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [isExpanded]);
 
-  const prueba = useSelector((state) => state);
-  console.log(typeof prueba);
+  /* const prueba = useSelector((state) => state);
+  console.log(typeof prueba); */
 
   return (
     <>
