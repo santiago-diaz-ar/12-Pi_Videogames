@@ -4,13 +4,21 @@ const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
-const sequelize = new Sequelize(
-  `postgresql://ur6tmfaxqp2bmgaqlxmi:TE13QZXJsxxrxtmdp0RItUCt4qfsqx@bn5x2fqlsxpzu32cgknj-postgresql.services.clever-cloud.com:50013/bn5x2fqlsxpzu32cgknj`,
-  {
-    logging: false, // set to console.log to see the raw SQL queries
-    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  }
-);
+
+
+const sequelize = new Sequelize(  
+  `postgres://videogames_66l1_user:0bPxMy9SBfFfb6mzyoPwBZX3heJjoX76@dpg-cudb861u0jms73a32ttg-a.oregon-postgres.render.com/videogames_66l1`,  
+  {  
+    logging: false,  
+    native: false,  
+    dialectOptions: {  
+      ssl: {  
+        require: true,  
+        rejectUnauthorized: false // Esto puede ser necesario en algunos entornos de nube.  
+      }  
+    },  
+  }  
+); 
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
