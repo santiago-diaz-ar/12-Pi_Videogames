@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/12-Pi_Videogames/static/css/main.252de6fb.css",
+    "main.js": "/12-Pi_Videogames/static/js/main.ac61f870.js",
+    "static/js/453.419a5d54.chunk.js": "/12-Pi_Videogames/static/js/453.419a5d54.chunk.js",
+    "static/media/manda.jpg": "/12-Pi_Videogames/static/media/manda.0f3783abfaec049943b1.jpg",
+    "static/media/neon.jpeg": "/12-Pi_Videogames/static/media/neon.04acda34d916bc3b7c15.jpeg",
+    "index.html": "/12-Pi_Videogames/index.html",
+    "main.252de6fb.css.map": "/12-Pi_Videogames/static/css/main.252de6fb.css.map",
+    "main.ac61f870.js.map": "/12-Pi_Videogames/static/js/main.ac61f870.js.map",
+    "453.419a5d54.chunk.js.map": "/12-Pi_Videogames/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.252de6fb.css",
+    "static/js/main.ac61f870.js"
+  ]
+}
